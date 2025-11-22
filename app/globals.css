@@ -1,7 +1,6 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* Removed @import "tw-animate-css" and @custom-variant which were causing import errors */
 
 :root {
   /* Updated color palette for textile boutique theme - warm, rich tones inspired by fabrics */
