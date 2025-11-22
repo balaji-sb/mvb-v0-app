@@ -92,3 +92,5 @@ export function CartTable({ cartItems, onDelete }: CartTableProps) {
     </div>
   )
 }
+
+export default CartTable

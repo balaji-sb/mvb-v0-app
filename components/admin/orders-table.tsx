@@ -88,3 +88,5 @@ export function OrdersTable({ orders, onStatusChange }: OrdersTableProps) {
     </div>
   )
 }
+
+export default OrdersTable

@@ -98,3 +98,5 @@ export function ProductsTable({ products, onEdit, onDelete }: ProductsTableProps
     </div>
   )
 }
+
+export default ProductsTable

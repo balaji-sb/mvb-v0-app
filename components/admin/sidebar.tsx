@@ -59,3 +59,5 @@ export function AdminSidebar() {
     </div>
   )
 }
+
+export default AdminSidebar

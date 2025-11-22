@@ -69,3 +69,5 @@ export function UsersTable({ users, onDelete }: UsersTableProps) {
     </div>
   )
 }
+
+export default UsersTable

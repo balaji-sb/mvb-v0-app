@@ -72,3 +72,5 @@ export function CategoriesTable({ categories, onEdit, onDelete }: CategoriesTabl
     </div>
   )
 }
+
+export default CategoriesTable
