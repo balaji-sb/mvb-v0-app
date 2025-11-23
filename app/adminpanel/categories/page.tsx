@@ -52,8 +52,14 @@ export default function CategoriesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    console.log("[v0] Submitting category form")
+    console.log("[v0] Form data:", formData)
+    console.log("[v0] Editing:", editing)
+
     const method = editing ? "PUT" : "POST"
     const url = editing ? `/api/adminpanel/categories?id=${editing}` : "/api/adminpanel/categories"
+
+    console.log("[v0] Request:", { method, url })
 
     try {
       const response = await fetch(url, {
@@ -62,14 +68,24 @@ export default function CategoriesPage() {
         body: JSON.stringify(formData),
       })
 
+      console.log("[v0] Response status:", response.status)
+
+      const responseData = await response.json()
+      console.log("[v0] Response data:", responseData)
+
       if (response.ok) {
+        console.log("[v0] Category saved successfully")
         fetchCategories()
         setShowForm(false)
         setEditing(null)
         setFormData({ name: "", description: "" })
+      } else {
+        console.error("[v0] Failed to save category:", responseData)
+        alert(`Error: ${responseData.error || "Failed to save category"}`)
       }
     } catch (error) {
-      console.error("Failed to save category:", error)
+      console.error("[v0] Failed to save category:", error)
+      alert("Network error: Failed to save category")
     }
   }
 
